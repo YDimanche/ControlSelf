@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dimanche.controlself">
+
+    <!-- 应用锁需要的权限 -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+
+    <application
+        android:name=".base.AndroidApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/tubiao"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <receiver
+            android:name=".module.reset.ResetBroadcast"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".module.applist.AppListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.appset.AppSetActivity" />
+
+        <service android:name=".module.monitor.MonitorService" />
+        <service android:name=".module.reset.ResetService" />
+        <activity android:name=".module.rest.RestActivity"
+            android:launchMode="singleTask"></activity>
+    </application>
+
+</manifest>
