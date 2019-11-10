@@ -86,7 +86,7 @@ public class AppListActivity extends BaseActivity implements AppListView {
     private void setTitle() {
         TextView title = findViewById(R.id.title);
         ImageView bac = findViewById(R.id.bac);
-        title.setText("应用列表");
+        title.setText("应用");
         bac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
